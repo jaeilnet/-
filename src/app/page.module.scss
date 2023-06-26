@@ -1,0 +1,48 @@
+.main {
+  ul {
+    margin-top: 120px;
+    height: calc(100vh - 120px);
+
+    li {
+      display: flex;
+      margin-left: auto;
+      margin-right: 48px;
+
+      max-width: 500px;
+
+      height: calc((100% - 120px) / 6);
+
+      div {
+        min-width: 2rem;
+        min-height: 2rem;
+        width: calc(100% / 7);
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+p.sunday {
+  color: red;
+}
+
+p.saturday {
+  color: blue;
+}
+
+div.opacity {
+  opacity: 0.5;
+}
+
+.indicator {
+  display: flex;
+  max-width: 500px;
+
+  margin-left: auto;
+  margin-bottom: 1rem;
+  margin-right: 24px;
+  gap: 1rem;
+}
