@@ -1,9 +1,11 @@
 import { getDate } from "@/utils/date";
 
-const useMonths = ({
-  year = new Date().getFullYear(),
-  month = new Date().getMonth(),
-}) => {
+interface MonthHooksProps {
+  year: number;
+  month: number;
+}
+
+const useMonths = ({ year, month }: MonthHooksProps) => {
   const lastMonthDay = getDate({ year, month, day: 0 }).getDay();
   const startMonthDay = getDate({ year, month, day: 1 }).getDay();
 
@@ -15,6 +17,12 @@ const useMonths = ({
     month: month + 1,
     day: 0,
   }).getDate();
+
+  const currentDate = getDate({
+    year: new Date().getFullYear(),
+    month: new Date().getMonth() + 1,
+    day: new Date().getDate(),
+  });
 
   const calendar = () => {
     let month = [];
@@ -50,6 +58,7 @@ const useMonths = ({
     lastMonthDay,
     startMonth,
     startMonthLastDay,
+    currentDate,
     calendar,
   };
 };

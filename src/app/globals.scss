@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  line-height: 1.5;
 }
 
 html,
@@ -21,6 +22,6 @@ li {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    // color-scheme: dark;
   }
 }

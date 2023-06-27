@@ -1,0 +1,45 @@
+.calender {
+  width: calc(100% - 250px);
+  height: calc(100vh - 120px);
+
+  li {
+    display: flex;
+
+    div {
+      min-width: 2rem;
+      min-height: 2rem;
+      width: calc(100% / 7);
+
+      cursor: pointer;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+p.sunday {
+  color: $red_400;
+}
+
+p.saturday {
+  color: $blue_500;
+}
+
+div.opacity {
+  opacity: 0.3;
+}
+
+li.day {
+  height: 5rem;
+}
+
+li.date {
+  height: calc((100% - 120px) / 6);
+}
+
+.currentDate {
+  background-color: $gray_500;
+  border-radius: 4px;
+}

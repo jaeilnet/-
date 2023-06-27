@@ -1,0 +1,55 @@
+.sidebar {
+  border-right: 1px solid $gray_500;
+
+  width: 250px;
+  padding-right: 24px;
+
+  button {
+    width: 100%;
+  }
+}
+
+.sidebar_calendar {
+  width: 100%;
+
+  li {
+    display: flex;
+    height: calc(100% / 3);
+
+    div {
+      min-width: 1rem;
+      min-height: 2rem;
+      width: calc(100% / 7);
+
+      @include layoutCenter();
+
+      cursor: pointer;
+
+      &:hover {
+        border-radius: 8px;
+        background-color: $blue_500;
+
+        p {
+          color: #fff;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.indicator {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconBox {
+  display: flex;
+}
