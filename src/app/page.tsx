@@ -7,9 +7,9 @@ import { getDay } from "@/utils/date";
 import useIndicator from "@/hooks/useIndicator";
 import Indicator from "@/components/Indicator";
 
-let currentMonthDay = false;
-
 export default function Home() {
+  let currentMonthDay = false;
+
   const { handleIndicator, month } = useIndicator(new Date().getMonth() + 1);
   const { calendar, startMonthLastDay } = useMonths({ year: 2023, month });
 
@@ -32,9 +32,9 @@ export default function Home() {
             </div>
           ))}
         </li>
-        {calendar().map((e, i) => (
+        {calendar().map((week, i) => (
           <li key={i} className={styles.date}>
-            {e.map((days, idx) => {
+            {week.map((days, idx) => {
               const opacityStyles = () => {
                 if (i < 2 && days === 1) {
                   currentMonthDay = true;
