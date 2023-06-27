@@ -10,12 +10,12 @@
 
       max-width: 500px;
 
-      height: calc((100% - 120px) / 6);
-
       div {
         min-width: 2rem;
         min-height: 2rem;
         width: calc(100% / 7);
+
+        cursor: pointer;
 
         p {
           text-align: center;
@@ -34,7 +34,15 @@ p.saturday {
 }
 
 div.opacity {
-  opacity: 0.5;
+  opacity: 0.3;
+}
+
+li.day {
+  height: 5rem;
+}
+
+li.date {
+  height: calc((100% - 120px) / 6);
 }
 
 .indicator {

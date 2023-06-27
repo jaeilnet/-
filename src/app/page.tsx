@@ -2,9 +2,12 @@
 
 import useMonths from "@/hooks/useMonths";
 import styles from "./page.module.scss";
-import { getDay } from "./utils/date";
-import Indicator from "./components/Indicator";
+import { getDay } from "@/utils/date";
+
 import useIndicator from "@/hooks/useIndicator";
+import Indicator from "@/components/Indicator";
+
+let currentMonthDay = false;
 
 export default function Home() {
   const { handleIndicator, month } = useIndicator(new Date().getMonth() + 1);
@@ -22,7 +25,7 @@ export default function Home() {
           handleIndicator={handleIndicator}
           className={styles.indicator}
         />
-        <li>
+        <li className={styles.day}>
           {Array.from({ length: 7 }, (_, days) => (
             <div key={days}>
               <p className={weekendStyles(days)}>{getDay(days)}</p>
@@ -30,18 +33,22 @@ export default function Home() {
           ))}
         </li>
         {calendar().map((e, i) => (
-          <li key={i}>
+          <li key={i} className={styles.date}>
             {e.map((days, idx) => {
               const opacityStyles = () => {
-                // 조건 찾기
-              };
+                if (i < 2 && days === 1) {
+                  currentMonthDay = true;
+                } else if (days === 1) {
+                  currentMonthDay = false;
+                }
 
-              // opacityStyles();
+                return currentMonthDay;
+              };
 
               return (
                 <div
                   key={idx}
-                  className={idx > 0 && idx < 30 ? "" : styles.opacity}
+                  className={opacityStyles() ? "" : styles.opacity}
                 >
                   <p className={weekendStyles(idx)}>{days}</p>
                 </div>

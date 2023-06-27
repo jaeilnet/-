@@ -1,4 +1,4 @@
-import { getDate } from "@/app/utils/date";
+import { getDate } from "@/utils/date";
 
 const useMonths = ({
   year = new Date().getFullYear(),
