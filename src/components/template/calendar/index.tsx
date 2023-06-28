@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { memo, useCallback } from "react";
 
 import useMonths from "@/hooks/useMonths";
 import { getDay } from "@/utils/date";
@@ -22,32 +22,27 @@ const Calendar = ({ year, month, className }: CalendarProps) => {
     return days === 0 ? styles.sunday : days === 6 ? styles.saturday : "";
   };
 
-  const currentDateStyles = useCallback(
-    (days: number, month: number) => {
-      if (
-        days === currentDate.getDate() &&
-        month === currentDate.getMonth() + 1
-      ) {
-        return true;
-      }
+  const currentDateStyles = (days: number, month: number) => {
+    if (
+      days === currentDate.getDate() &&
+      month === currentDate.getMonth() + 1 &&
+      currentMonthDay
+    ) {
+      return true;
+    }
 
-      return false;
-    },
-    [currentDate]
-  );
+    return false;
+  };
 
-  const opacityStyles = useCallback(
-    (days: number, idx: number) => {
-      if (idx < 2 && days === 1) {
-        currentMonthDay = true;
-      } else if (days === 1) {
-        currentMonthDay = false;
-      }
+  const opacityStyles = (days: number, idx: number) => {
+    if (idx < 2 && days === 1) {
+      currentMonthDay = true;
+    } else if (days === 1) {
+      currentMonthDay = false;
+    }
 
-      return currentMonthDay;
-    },
-    [currentMonthDay]
-  );
+    return currentMonthDay;
+  };
 
   return (
     <ul className={className || styles.calender}>
@@ -63,11 +58,16 @@ const Calendar = ({ year, month, className }: CalendarProps) => {
           {week.map((days, idx) => (
             <div
               key={idx}
-              className={`${
-                currentDateStyles(days, month) ? styles.currentDate : ""
-              } ${opacityStyles(days, i) ? "" : styles.opacity}`}
+              className={`
+               ${opacityStyles(days, i) ? "" : styles.opacity}`}
             >
-              <p className={weekendStyles(idx)}>{days}</p>
+              <p
+                className={`${
+                  currentDateStyles(days, month) ? styles.currentDate : ""
+                } ${weekendStyles(idx)}`}
+              >
+                {days}
+              </p>
             </div>
           ))}
         </li>
@@ -76,4 +76,4 @@ const Calendar = ({ year, month, className }: CalendarProps) => {
   );
 };
 
-export default Calendar;
+export default memo(Calendar);

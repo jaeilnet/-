@@ -6,6 +6,8 @@ import Header from "@/components/layout/header";
 import SideBar from "@/components/layout/sidebar";
 import Calendar from "@/components/template/calendar";
 import { DateContext } from "@/context/DateProvider";
+
+import useDate from "@/hooks/useDate";
 import { useContext } from "react";
 
 export default function Home() {

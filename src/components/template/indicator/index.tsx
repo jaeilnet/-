@@ -1,18 +1,25 @@
 "use client";
 
 import Button from "@/components/elements/button";
-import { DateContext } from "@/context/DateProvider";
-import { useContext } from "react";
+import { memo } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 interface IndicatorProps {
+  year: number;
+  month: number;
+  handleMonthClick: (type: "minus" | "plus") => void;
+
   className?: string;
   children?: React.ReactNode;
 }
 
-const Indicator = ({ className, children }: IndicatorProps) => {
-  const { handleMonthClick, month, year } = useContext(DateContext);
-
+const Indicator = ({
+  year,
+  month,
+  children,
+  className,
+  handleMonthClick,
+}: IndicatorProps) => {
   return (
     <>
       <h1>
@@ -31,4 +38,4 @@ const Indicator = ({ className, children }: IndicatorProps) => {
   );
 };
 
-export default Indicator;
+export default memo(Indicator);
