@@ -6,13 +6,17 @@ import Calendar from "@/components/template/calendar";
 import Indicator from "@/components/template/indicator";
 import useDate from "@/hooks/useDate";
 import { memo } from "react";
+import Link from "next/link";
+import { ROUTE } from "@/route";
 
 const SideBar = () => {
   const { month, year, handleMonthClick } = useDate();
 
   return (
     <nav className={styles.sidebar}>
-      <Button>일정 만들기</Button>
+      <Link href={ROUTE.SCHEDULE}>
+        <Button>일정 만들기</Button>
+      </Link>
 
       <div className={styles.indicator}>
         <Indicator

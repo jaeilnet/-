@@ -4,6 +4,8 @@ import Button from "@/components/elements/button";
 import Indicator from "@/components/template/indicator";
 import { useContext } from "react";
 import { DateContext } from "@/context/DateProvider";
+import Link from "next/link";
+import { ROUTE } from "@/route";
 
 interface HeaderProps {}
 
@@ -28,7 +30,9 @@ const Header = ({}: HeaderProps) => {
         </Indicator>
       </div>
 
-      <Button>로그인</Button>
+      <Link href={ROUTE.LOGIN}>
+        <Button>로그인</Button>
+      </Link>
     </header>
   );
 };
