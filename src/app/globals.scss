@@ -20,6 +20,10 @@ li {
   list-style-type: none;
 }
 
+textarea {
+  resize: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     // color-scheme: dark;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo, useCallback } from "react";
+import React, { memo } from "react";
 
 import useMonths from "@/hooks/useMonths";
 import { getDay } from "@/utils/date";
@@ -46,7 +46,7 @@ const Calendar = ({ year, month, className }: CalendarProps) => {
 
   return (
     <ul className={className || styles.calender}>
-      <li className={styles.day}>
+      <li className={(className && className + "_" + styles.day) || styles.day}>
         {Array.from({ length: 7 }, (_, days) => (
           <div key={days}>
             <p className={weekendStyles(days)}>{getDay(days)}</p>
