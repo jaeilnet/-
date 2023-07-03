@@ -7,7 +7,7 @@ import Indicator from "@/components/template/indicator";
 import useDate from "@/hooks/useDate";
 import { memo } from "react";
 import Link from "next/link";
-import { ROUTE } from "@/route";
+import { ROUTE } from "@/router";
 
 const SideBar = () => {
   const { month, year, handleMonthClick } = useDate();
@@ -27,7 +27,12 @@ const SideBar = () => {
         />
       </div>
 
-      <Calendar year={year} month={month} className={styles.sidebar_calendar} />
+      <Calendar
+        year={year}
+        month={month}
+        className={styles.sidebar_calendar}
+        onClick={(e, d) => console.log(e, d)}
+      />
     </nav>
   );
 };

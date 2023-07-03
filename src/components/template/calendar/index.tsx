@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo } from "react";
+import React, { MouseEvent, memo } from "react";
 
 import useMonths from "@/hooks/useMonths";
 import { getDay } from "@/utils/date";
@@ -11,9 +11,10 @@ interface CalendarProps {
   year: number;
   month: number;
   className?: string;
+  onClick: (e: MouseEvent<HTMLDivElement>, currentDate: Date) => void;
 }
 
-const Calendar = ({ year, month, className }: CalendarProps) => {
+const Calendar = ({ year, month, onClick, className }: CalendarProps) => {
   const { calendar, currentDate } = useMonths({ year, month });
 
   const weekendStyles = (days: number) => {
@@ -75,7 +76,11 @@ const Calendar = ({ year, month, className }: CalendarProps) => {
       {calendar().map((week, i) => (
         <li key={i} className={styles.date}>
           {week.map((days, idx) => (
-            <div key={idx} className={daysStyles.opacityStyles(days, i)}>
+            <div
+              key={idx}
+              className={daysStyles.opacityStyles(days, i)}
+              onClick={(e) => onClick(e, currentDate)}
+            >
               <p
                 className={
                   daysStyles.currentDateStyles(days, month) ??
