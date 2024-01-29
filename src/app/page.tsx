@@ -1,5 +1,12 @@
-import styles from "./page.module.scss";
+"use client";
+
+import Calendar from "@/components/template/calendar";
+import { DateContext } from "@/context/DateProvider";
+
+import { useContext } from "react";
 
 export default function Home() {
-  return <main className={styles.main}></main>;
+  const { month, year } = useContext(DateContext);
+
+  return <Calendar year={year} month={month} />;
 }

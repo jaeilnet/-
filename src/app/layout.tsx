@@ -1,5 +1,10 @@
+import { DateContextProvider } from "@/context/DateProvider";
 import "./globals.scss";
 import { Inter } from "next/font/google";
+import Sidebar from "@/components/layout/sidebar";
+import Header from "@/components/layout/header";
+
+import styles from "./page.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ko">
+      <body className={inter.className}>
+        <DateContextProvider>
+          <main className={styles.main}>
+            <Header />
+            <section className={styles.section}>
+              <Sidebar />
+              {children}
+            </section>
+          </main>
+        </DateContextProvider>
+      </body>
     </html>
   );
 }
