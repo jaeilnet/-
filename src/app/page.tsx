@@ -8,5 +8,7 @@ import { useContext } from "react";
 export default function Home() {
   const { month, year } = useContext(DateContext);
 
-  return <Calendar year={year} month={month} />;
+  return (
+    <Calendar year={year} month={month} onClick={() => console.log("first")} />
+  );
 }

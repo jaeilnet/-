@@ -1,0 +1,41 @@
+.default {
+  position: relative;
+  min-height: 70px;
+
+  input {
+    width: 240px;
+    border: 1px solid $gray_500;
+    border-radius: 8px;
+
+    padding: {
+      top: 8px;
+      bottom: 8px;
+      right: 8px;
+      left: 36px;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $green_500;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 18%;
+    left: 5%;
+  }
+
+  p {
+    margin : {
+      top: 4px;
+      bottom: 4px;
+      left: 8px;
+    }
+    font-size: 14px;
+  }
+}

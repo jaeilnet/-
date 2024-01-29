@@ -7,10 +7,10 @@ import Indicator from "@/components/template/indicator";
 import { useContext } from "react";
 import { DateContext } from "@/context/DateProvider";
 import Link from "next/link";
-import { ROUTE } from "@/route";
+import { ROUTE } from "@/router";
 import { usePathname, useRouter } from "next/navigation";
 import { MdArrowBackIosNew } from "react-icons/md";
-import { HEADER_TITLE } from "@/route";
+import { HEADER_TITLE } from "@/router";
 
 const Header = () => {
   const { month, year, handleMonthClick, handleTodayClick } =
