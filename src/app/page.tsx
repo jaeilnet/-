@@ -6,7 +6,16 @@ import { DateContext } from "@/context/DateProvider";
 import { useContext } from "react";
 
 export default function Home() {
-  const { month, year } = useContext(DateContext);
+  const { month, year, ...rest } = useContext(DateContext);
 
-  return <Calendar year={year} month={month} />;
+  console.log(month, year, rest);
+
+  return (
+    <>
+      <Calendar year={year} month={month} />
+
+      <p>custom calender</p>
+      <Calendar year={year} month={month} />
+    </>
+  );
 }

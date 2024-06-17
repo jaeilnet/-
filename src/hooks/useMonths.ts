@@ -18,11 +18,7 @@ const useMonths = ({ year, month }: MonthHooksProps) => {
     day: 0,
   }).getDate();
 
-  const currentDate = getDate({
-    year: new Date().getFullYear(),
-    month: new Date().getMonth() + 1,
-    day: new Date().getDate(),
-  });
+  const currentDate = new Date();
 
   const calendar = () => {
     let month = [];
@@ -52,6 +48,8 @@ const useMonths = ({ year, month }: MonthHooksProps) => {
     return month;
   };
 
+  const calendarUI = calendar();
+
   return {
     lastMonth,
     startMonthDay,
@@ -59,7 +57,7 @@ const useMonths = ({ year, month }: MonthHooksProps) => {
     startMonth,
     startMonthLastDay,
     currentDate,
-    calendar,
+    calendar: calendarUI,
   };
 };
 

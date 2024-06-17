@@ -1,7 +1,7 @@
 "use client";
 
 import useDate from "@/hooks/useDate";
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext } from "react";
 
 interface DateContextProviderProps {
   children: ReactNode;

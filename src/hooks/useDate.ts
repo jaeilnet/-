@@ -3,9 +3,15 @@
 import { useState } from "react";
 
 const useDate = () => {
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [month, setMonth] = useState(new Date().getMonth() + 1);
-  const [date, setDate] = useState(new Date().getDate());
+  const today = {
+    year: new Date().getFullYear(),
+    month: new Date().getMonth() + 1,
+    date: new Date().getDate(),
+  };
+
+  const [year, setYear] = useState(today.year);
+  const [month, setMonth] = useState(today.month);
+  const [date, setDate] = useState(today.date);
 
   const handleMonthClick = (type: "plus" | "minus") => {
     if (type === "minus") {
@@ -14,6 +20,7 @@ const useDate = () => {
         setYear((prev) => prev - 1);
       }
     }
+
     if (type === "plus") {
       setMonth((prev) => (prev === 12 ? 1 : prev + 1));
       if (month === 12) {
@@ -23,13 +30,9 @@ const useDate = () => {
   };
 
   const handleTodayClick = () => {
-    const currentYear = new Date().getFullYear();
-    const currentMonth = new Date().getMonth() + 1;
-    const currentDate = new Date().getDate();
-
-    setYear((prev) => (prev = currentYear));
-    setMonth((prev) => (prev = currentMonth));
-    setDate((prev) => (prev = currentDate));
+    setYear((prev) => (prev = today.year));
+    setMonth((prev) => (prev = today.month));
+    setDate((prev) => (prev = today.date));
   };
 
   return {

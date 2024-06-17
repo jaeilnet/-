@@ -1,12 +1,10 @@
 import { DateContextProvider } from "@/context/DateProvider";
 import "./globals.scss";
-import { Inter } from "next/font/google";
+
 import Sidebar from "@/components/layout/sidebar";
 import Header from "@/components/layout/header";
 
 import styles from "./page.module.scss";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
+      <body>
         <DateContextProvider>
           <main className={styles.main}>
             <Header />
