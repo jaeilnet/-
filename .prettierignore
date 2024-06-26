@@ -1,0 +1,10 @@
+# Ignore artifacts:
+dist
+coverage
+
+# add
+node_modules
+coverage
+.changeset
+build
+pnpm-lock.yaml
