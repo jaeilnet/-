@@ -62,3 +62,4 @@ packages/**/.turbo
 
 # content layer
 .contentlayer
+*storybook.log

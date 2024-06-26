@@ -1,21 +1,23 @@
 {
-  "name": "jaeil-ui",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "dev": "pnpm run -F docs dev"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.6",
-    "eslint": "^8.5.7",
-    "eslint-plugin-jsx-a11y": "^6.9.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "prettier": "^3.3.2",
-    "tsup": "^8.1.0",
-    "typescript": "^5.2.2"
-  },
-  "engines": {
-    "node": ">=16.x",
-    "pnpm": ">=8.x"
-  }
+    "name": "jaeil-ui",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "pnpm run -F docs dev"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.27.6",
+        "@storybook/react-vite": "^8.1.10",
+        "eslint": "^8.5.7",
+        "eslint-plugin-jsx-a11y": "^6.9.0",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "plop": "^4.0.1",
+        "prettier": "^3.3.2",
+        "tsup": "^8.1.0",
+        "typescript": "^5.2.2"
+    },
+    "engines": {
+        "node": ">=16.x",
+        "pnpm": ">=8.x"
+    }
 }
