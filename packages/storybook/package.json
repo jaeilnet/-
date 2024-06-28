@@ -1,7 +1,7 @@
 {
-    "name": "@jaeil-ui/storybook",
+    "name": "@jaeil-zzang/storybook",
     "version": "0.0.0",
-    "description": "jaeil ui storybook",
+    "description": "jaeil-zzang ui storybook",
     "keywords": [
         "storybook"
     ],

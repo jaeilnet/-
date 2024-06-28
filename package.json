@@ -1,11 +1,11 @@
 {
-    "name": "jaeil-ui",
+    "name": "jaeil-zzang",
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
         "dev": "pnpm run -F docs dev",
-        "sb": "pnpm run -F @jaeil-ui/storybook dev",
-        "build:sb": "pnpm run -F @jaeil-ui/storybook build:sb"
+        "sb": "pnpm run -F @jaeil-zzang/storybook dev",
+        "build:sb": "pnpm run -F @jaeil-zzang/storybook build:sb"
     },
     "devDependencies": {
         "@changesets/cli": "^2.27.6",
